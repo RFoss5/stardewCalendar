@@ -1,0 +1,2 @@
+ancient fruit, 1, 1, any
+parsnip, 1, 1, any
