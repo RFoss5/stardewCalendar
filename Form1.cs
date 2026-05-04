@@ -16,5 +16,11 @@ namespace stardewCalendar
 		{
 			InitializeComponent();
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Console.WriteLine(seasonChooser.GetItemText(seasonChooser.SelectedIndex));
+			Console.WriteLine(dateChooser.GetItemText(dateChooser.SelectedIndex));
+		}
 	}
 }

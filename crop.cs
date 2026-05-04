@@ -8,15 +8,17 @@ using System.Xml.Linq;
 namespace stardewCalendar
 {
 	internal class Crop : Item
-	{
-		Program.season season;
+	{		
+	public virtual Program.season Season { get; set; }
+	public virtual int growthTime { get; set; }
 
-		public Crop(string name,int sellPrice,int count, Program.season season)
+		public Crop(string name,int sellPrice,int count, int growthTime, Program.season season)
 		{
-			this.season = season;
+			this.Season = season;
 			this.sellPrice = sellPrice;
 			this.count = count;
 			this.name = name;
+			this.growthTime = growthTime;
 		}
 	}
 }
