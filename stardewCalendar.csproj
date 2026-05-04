@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="crop.cs" />
+    <Compile Include="date.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
