@@ -12,13 +12,15 @@ namespace stardewCalendar
 	public virtual Program.season Season { get; set; }
 	public virtual int growthTime { get; set; }
 
-		public Crop(string name,int sellPrice,int count, int growthTime, Program.season season)
+	public virtual int regrowTime { get; set; }
+
+		public Crop(string name,int sellPrice, int growthTime, Program.season season, int regrowTime=0)
 		{
 			this.Season = season;
 			this.sellPrice = sellPrice;
-			this.count = count;
 			this.name = name;
 			this.growthTime = growthTime;
+			this.regrowTime = regrowTime;
 		}
 	}
 }

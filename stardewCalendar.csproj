@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="calendar.cs" />
     <Compile Include="crop.cs" />
     <Compile Include="date.cs" />
     <Compile Include="Form1.cs">
@@ -58,7 +59,6 @@
     <Compile Include="item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="regrowableCrop.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +70,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +84,153 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Amaranth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Ancient_Fruit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Artichoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Beet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Blue_Jazz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Blueberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Bok_Choy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Broccoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Cactus_Fruit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Carrot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Cauliflower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Coffee_Bean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Corn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Cranberries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Eggplant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Fairy_Rose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Garlic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Grape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Green_Bean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Hops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Hot_Pepper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Kale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Melon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Parsnip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Pineapple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Poppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Potato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Powdermelon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Pumpkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Radish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Red_Cabbage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Rhubarb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Rice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Starfruit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Strawberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Summer_Spangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Summer_Squash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Sunflower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Sweet_Gem_Berry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Taro_Root.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Tomato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Tulip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Wheat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Yam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Calendar_Spring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Calendar_Winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Calendar_Fall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Calendar_Summer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\Brown_Chicken.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
