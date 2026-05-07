@@ -36,35 +36,54 @@ namespace stardewCalendar
 				if(generateCrops.crops[i].name == cropChooser.GetItemText(cropChooser.Text)){
 					if ((generateCrops.crops[i].Season.ToString().ToLower() == seasonChooser.GetItemText(seasonChooser.Text).ToLower())||(generateCrops.crops[i].Season.ToString().ToLower()=="any"))
 					{
-						if(dateChooser.SelectedIndex + generateCrops.crops[i].growthTime >= 28)
-						{	
+						if((dateChooser.SelectedIndex + generateCrops.crops[i].growthTime) > 28)
+						{
+							bool nextSeason = false;
+							int seasDay;
 							for(int j=i+1;j<generateCrops.crops.Length;j++){
 								switch (generateCrops.crops[i].Season.ToString().ToLower())
 								{
 									case "spring":
-										if((generateCrops.crops[i].name==generateCrops.crops[j].name) &&(generateCrops.crops[j].Season==Program.season.summer))
-											addToCalendar(generateCrops.crops[i], (dateChooser.SelectedIndex + generateCrops.crops[i].growthTime-28), Program.season.summer);
+										if((generateCrops.crops[i].name==generateCrops.crops[j].name) &&(generateCrops.crops[j].Season==Program.season.summer)){
+											seasDay = (dateChooser.SelectedIndex + (generateCrops.crops[i].growthTime - 28));
+											addToCalendar(generateCrops.crops[i], (dateChooser.SelectedIndex + (generateCrops.crops[i].growthTime - 28)), Program.season.summer);
+										}
+										nextSeason = true;
 										break;
 
 									case "summer":
-										if ((generateCrops.crops[i].name==generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.fall))
-											addToCalendar(generateCrops.crops[i], (dateChooser.SelectedIndex + generateCrops.crops[i].growthTime-28), Program.season.fall);
+										if ((generateCrops.crops[i].name==generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.fall)){
+											seasDay = (dateChooser.SelectedIndex + (generateCrops.crops[i].growthTime - 28));
+											addToCalendar(generateCrops.crops[i], seasDay, Program.season.fall);
+										}
+										nextSeason = true;
 										break;
 
 									case "fall":
-										if ((generateCrops.crops[i].name==generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.winter))
-											addToCalendar(generateCrops.crops[i], (dateChooser.SelectedIndex + generateCrops.crops[i].growthTime-28), Program.season.winter);
+										if ((generateCrops.crops[i].name==generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.winter)){
+											seasDay = (dateChooser.SelectedIndex + (generateCrops.crops[i].growthTime - 28));
+											addToCalendar(generateCrops.crops[i],seasDay, Program.season.winter);
+										}
+										nextSeason = true;
 										break;
 
 									case "winter":
-										if ((generateCrops.crops[i].name==generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.spring))
-											addToCalendar(generateCrops.crops[i], (dateChooser.SelectedIndex + generateCrops.crops[i].growthTime-28), Program.season.spring);
+										if ((generateCrops.crops[i].name == generateCrops.crops[j].name) && (generateCrops.crops[j].Season == Program.season.spring)){
+											seasDay = (dateChooser.SelectedIndex + (generateCrops.crops[i].growthTime - 28));
+											addToCalendar(generateCrops.crops[i], seasDay, Program.season.spring);
+										}
+											nextSeason = true;
 										break;
 								}
 							}
+							if(!nextSeason)
+								MessageBox.Show("This crop will not be ready to harvest during " + seasonChooser.GetItemText(seasonChooser.Text) + ".");
+							return;
 
 						}
 						else{
+
+
 						}
 						addToCalendar(generateCrops.crops[i], dateChooser.SelectedIndex + generateCrops.crops[i].growthTime, generateCrops.crops[i].Season);
 					}
@@ -78,7 +97,7 @@ namespace stardewCalendar
 		private void addToCalendar(Crop crop, int day, Program.season season){
 			switch(season){
    				case Program.season.spring:
- 					SCalendar.Spring[day].Add(crop);
+ 					SCalendar.Spring[day+1].Add(crop);
 					if(crop.regrowTime>0){
 						while(day+crop.regrowTime<29){
 							SCalendar.Spring[day+crop.regrowTime].Add(crop);
@@ -87,7 +106,7 @@ namespace stardewCalendar
 					}
 					break;
 				case Program.season.summer:
-					SCalendar.Summer[day].Add(crop);
+					SCalendar.Summer[day+1].Add(crop);
 					if (crop.regrowTime > 0)
 					{
 						while (day + crop.regrowTime < 29)
@@ -98,7 +117,7 @@ namespace stardewCalendar
 					}
 					break;
 				case Program.season.fall:
-					SCalendar.Fall[day].Add(crop);
+					SCalendar.Fall[day+1].Add(crop);
 					if (crop.regrowTime > 0)
 					{
 						while (day + crop.regrowTime < 29)
@@ -109,7 +128,7 @@ namespace stardewCalendar
 					}
 					break;
 				case Program.season.winter:
-					SCalendar.Winter[day].Add(crop);
+					SCalendar.Winter[day+1].Add(crop);
 					if (crop.regrowTime > 0)
 					{
 						while (day + crop.regrowTime < 29)
@@ -120,6 +139,11 @@ namespace stardewCalendar
 					}
 					break;
 			}
+			if (crop.regrowTime == 0)
+				MessageBox.Show(crop.name + " will be ready to harvest on day " + (day + 1) + " of " + season.ToString() + ".");
+			else
+				MessageBox.Show(crop.name + " will be ready to harvest on day " + (day) + " of " + season.ToString() + ".");
+
 		}
 
 		private void spr1_Click(object sender, EventArgs e)
